@@ -68,6 +68,17 @@ dependências, e mostra se a GPU foi reconhecida.
 run.bat
 ```
 
+### Se o download do PyTorch (2,5 GB) travar/expirar
+
+O `pip` às vezes sofre timeouts baixando o pacote grande do PyTorch. Baixe o wheel
+uma vez com `curl` (que resume sozinho) e instale a partir do arquivo:
+
+```bat
+curl -L -C - --retry 20 --retry-delay 5 -o torch.whl ^
+  https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp310-cp310-win_amd64.whl
+.venv\Scripts\python.exe -m pip install torch.whl
+```
+
 Dica de sala: no modo **Treinar**, faça ~1–2 minutos seguindo a bola verde com os
 olhos (movimente a cabeça o mínimo possível). Depois vá em **Testar** e veja o
 resultado; volte a **Treinar** sempre que quiser melhorar.
