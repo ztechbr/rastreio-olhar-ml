@@ -1,0 +1,18 @@
+# Ambiente virtual
+.venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Dados e modelos gerados em tempo de execucao (nao versionar binarios grandes)
+data/*.npz
+models/*.pt
+
+# Editores / SO
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
